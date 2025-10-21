@@ -43,7 +43,7 @@ export function StudentDashboard({ profile }: StudentDashboardProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <Card className="p-6 bg-neutral-light border-border">
-            <h3 className="text-sm font-medium text-muted mb-2">Active Matches</h3>
+            <h3 className="text-sm font-medium text-foreground mb-2">Active Matches</h3>
             <p className="text-3xl font-bold text-primary">{matches.length}</p>
           </Card>
         </motion.div>
@@ -54,8 +54,8 @@ export function StudentDashboard({ profile }: StudentDashboardProps) {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <Card className="p-6 bg-neutral-light border-border">
-            <h3 className="text-sm font-medium text-muted mb-2">Upcoming Calls</h3>
-            <p className="text-3xl font-bold text-accent">
+            <h3 className="text-sm font-medium text-foreground mb-2">Upcoming Calls</h3>
+            <p className="text-3xl font-bold text-primary">
               {matches.filter((m) => new Date(m.meeting_date) > new Date()).length}
             </p>
           </Card>
@@ -83,11 +83,11 @@ export function StudentDashboard({ profile }: StudentDashboardProps) {
         <h2 className="text-2xl font-bold text-foreground mb-6">Your Matches</h2>
         {loading ? (
           <div className="text-center py-12">
-            <p className="text-muted">Loading your matches...</p>
+            <p className="text-foreground">Loading your matches...</p>
           </div>
         ) : matches.length === 0 ? (
           <Card className="p-12 bg-neutral-light border-border text-center">
-            <p className="text-muted mb-4">No active matches yet</p>
+            <p className="text-foreground mb-4">No active matches yet</p>
             <Link href="/schedule">
               <Button className="bg-primary hover:bg-primary-dark text-white">Schedule Your First Time Slot</Button>
             </Link>
@@ -105,7 +105,7 @@ export function StudentDashboard({ profile }: StudentDashboardProps) {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="font-semibold text-foreground">Conversation Scheduled</h3>
-                      <p className="text-sm text-muted">
+                      <p className="text-sm text-foreground">
                         {new Date(match.meeting_date).toLocaleDateString()} at {match.meeting_time}
                       </p>
                     </div>

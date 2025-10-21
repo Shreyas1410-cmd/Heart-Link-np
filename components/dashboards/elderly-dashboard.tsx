@@ -43,7 +43,7 @@ export function ElderlyDashboard({ profile }: ElderlyDashboardProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <Card className="p-6 bg-neutral-light border-border">
-            <h3 className="text-sm font-medium text-muted mb-2">Active Connections</h3>
+            <h3 className="text-sm font-medium text-foreground mb-2">Active Connections</h3>
             <p className="text-3xl font-bold text-primary">{matches.length}</p>
           </Card>
         </motion.div>
@@ -54,8 +54,8 @@ export function ElderlyDashboard({ profile }: ElderlyDashboardProps) {
           transition={{ duration: 0.6, delay: 0.1 }}
         >
           <Card className="p-6 bg-neutral-light border-border">
-            <h3 className="text-sm font-medium text-muted mb-2">Upcoming Conversations</h3>
-            <p className="text-3xl font-bold text-accent">
+            <h3 className="text-sm font-medium text-foreground mb-2">Upcoming Conversations</h3>
+            <p className="text-3xl font-bold text-primary">
               {matches.filter((m) => new Date(m.meeting_date) > new Date()).length}
             </p>
           </Card>
@@ -83,11 +83,11 @@ export function ElderlyDashboard({ profile }: ElderlyDashboardProps) {
         <h2 className="text-2xl font-bold text-foreground mb-6">Your Conversations</h2>
         {loading ? (
           <div className="text-center py-12">
-            <p className="text-muted">Loading your conversations...</p>
+            <p className="text-foreground">Loading your conversations...</p>
           </div>
         ) : matches.length === 0 ? (
           <Card className="p-12 bg-neutral-light border-border text-center">
-            <p className="text-muted mb-4">No active conversations yet</p>
+            <p className="text-foreground mb-4">No active conversations yet</p>
             <Link href="/schedule">
               <Button className="bg-accent hover:bg-accent-light text-white">Share Your Availability</Button>
             </Link>
@@ -105,7 +105,7 @@ export function ElderlyDashboard({ profile }: ElderlyDashboardProps) {
                   <div className="flex justify-between items-start mb-4">
                     <div>
                       <h3 className="font-semibold text-foreground">Conversation Scheduled</h3>
-                      <p className="text-sm text-muted">
+                      <p className="text-sm text-foreground">
                         {new Date(match.meeting_date).toLocaleDateString()} at {match.meeting_time}
                       </p>
                     </div>

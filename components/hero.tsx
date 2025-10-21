@@ -17,7 +17,7 @@ export function Hero() {
           <h1 className="text-4xl md:text-6xl font-bold text-foreground mb-6 text-balance">
             Connect Across Generations
           </h1>
-          <p className="text-lg md:text-xl text-muted mb-8 max-w-2xl mx-auto text-balance">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-balance text-accent">
             HeartLink brings students and elderly individuals together for meaningful video conversations. Share
             stories, learn from experience, and build lasting connections.
           </p>
@@ -48,7 +48,7 @@ export function Hero() {
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.number}</div>
-              <div className="text-muted">{stat.label}</div>
+              <div className="text-accent">{stat.label}</div>
             </div>
           ))}
         </motion.div>

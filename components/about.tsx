@@ -14,7 +14,7 @@ export function About() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">Why HeartLink?</h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto text-accent">
             In a world where generations often feel disconnected, HeartLink creates bridges of understanding and
             compassion.
           </p>

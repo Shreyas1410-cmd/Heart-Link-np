@@ -29,7 +29,7 @@ export function DashboardHeader({ profile }: DashboardHeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div>
           <h1 className="text-2xl font-bold text-foreground">Welcome, {profile.name}</h1>
-          <p className="text-muted text-sm capitalize">
+          <p className="text-sm capitalize text-accent">
             {profile.role === "student" ? "Student" : "Elderly Individual"}
           </p>
         </div>

@@ -38,7 +38,7 @@ export function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">How It Works</h2>
-          <p className="text-lg text-muted max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto text-accent">
             Getting started with HeartLink is simple and takes just a few minutes
           </p>
         </motion.div>
@@ -57,7 +57,7 @@ export function HowItWorks() {
                   {step.number}
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                <p className="text-muted">{step.description}</p>
+                <p className="text-accent">{step.description}</p>
               </Card>
             </motion.div>
           ))}
