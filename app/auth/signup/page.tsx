@@ -41,20 +41,21 @@ export default function SignUp() {
 
       if (authError) throw authError
 
+      // We can now insert the profile with the authenticated session
       if (authData.user) {
-        const { error: profileError } = await supabase.from("profiles").insert([
-          {
-            user_id: authData.user.id,
-            email,
-            name,
-            role,
-            created_at: new Date().toISOString(),
-          },
-        ])
+        const { error: profileError } = await supabase.from("profiles").insert({
+          user_id: authData.user.id,
+          email,
+          name,
+          role,
+        })
 
-        if (profileError) throw profileError
+        if (profileError) {
+          console.log("[v0] Profile insert error:", profileError)
+          throw profileError
+        }
 
-        setSignupSuccess(true)
+        window.location.href = "/dashboard"
       }
     } catch (err) {
       console.log("[v0] Signup error:", err)
